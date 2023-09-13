@@ -5,17 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { mainGuard } from './guards/guard.guard';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { BGCLDirective } from './directives/bg-cl.directive'
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorPageComponent,
     HomePageComponent,
-    BGCLDirective
   ],
   imports: [
     BrowserModule,
@@ -23,7 +20,7 @@ import { BGCLDirective } from './directives/bg-cl.directive'
     FormsModule,
     HttpClientModule
   ],
-  providers: [mainGuard],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
