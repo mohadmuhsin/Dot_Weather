@@ -1,0 +1,66 @@
+<div class="min-h-screen  md:h-2/3 flex justify-center items-center">
+    <div class="p-12 bg-blue-400 shadow-md rounded w-full md:max-w-md  min-h-screen  md:h-2/3">
+        <h1 class="text-center text-white font-bold text-xl mb-4">Dot Weather</h1>
+        <div class="flex items-center">
+            <input
+            [(ngModel)]="text"
+            (input)="debouncedSearch()"
+            type="text"
+            placeholder="Search for a location"
+            class="flex-1 p-2 rounded-full"
+            />
+        </div>
+        <div *ngIf="invalid" class=" mt-4 p-3  rounded  flex  flex-col items-center justify-between ">
+            <div class="text-2xl text-red-900 font-bold p-4">
+                <p class="">{{this.error}}</p>
+
+            </div>
+            <div>
+                <img src="assets/wepik-export-20230913044304TJac.png" alt="">
+            </div>
+        </div>
+        <div *ngIf="!invalid" class="pt-24">
+            <div   class="flex justify-center">
+                <img *ngIf="sunny" src="assets/cloud.png" alt="">
+                <img *ngIf="snow" src="assets/snow.png" alt="">
+                <!-- <img *ngIf="haze" src="assets/cloud.png" alt=""> -->
+                <img *ngIf="clear" src="assets/clear.png" alt="">
+                <img *ngIf="rainy" src="assets/rain.png" alt="">
+                <img *ngIf="clouds" src="assets/cloud.png" alt="">
+                <img *ngIf="drizziling" src="assets/drizzle.png" alt="">
+            </div>
+
+            <div class="flex justify-center">
+                <p class="text-xl md:text-2xl text-white font-bold" >{{temp}}° <span>C</span></p>
+            </div>
+            <div class="flex justify-center">
+            <p class="text-white text-2xl font-bold uppercase">{{location}}</p>
+        </div>  
+
+        <!-- footer start -->
+        <div class="p-6  text-white flex justify-between ">
+            <div class="flex justify-center items-center"> 
+                <img class="p-2 w-12 h-12" src="assets/humidity.png" alt="">
+                <div>
+                    <p class="font-semibold">{{humidity}}%</p>
+                    <p class="font-medium">Humidity</p>
+                </div>
+            </div>
+            <div class=" flex justify-center items-center"> 
+                <img class="p-2 w-12 h-12" src="assets/wind.png" alt="">
+            <div>
+                <p class="font-semibold">{{wind}}<span> km/h</span></p>
+                <p class="font-medium">Wind</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- footer end -->
+        <div class="flex justify-center " > 
+            <div class="p-2 fixed bottom-0">
+                <p class="flex justify-center text-xs text-white items-center">© 2023 <span class="font-bold  mx-2"> Dot Weather.</span> All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
