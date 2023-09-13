@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MainServiceService } from 'src/app/service/main-service.service';
-import { Environment } from 'src/environments/environment';
+import { Environment } from 'src/app/environments/environment';
 
 @Component({
   selector: 'app-home-page',
