@@ -38,6 +38,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.search()
+  
   }
 
   debouncedSearch = this.debounce(() => {
@@ -50,6 +51,13 @@ export class HomePageComponent implements OnInit {
     this.service.getData(this.text).subscribe({
       next: (res: any) =>
       {
+        this.sunny = false
+        this.snow = false
+        this.haze = false
+        this.clear = false
+        this.rainy = false
+        this.clouds = false
+        this.drizziling = false
         this.location = res.name
         this.temp = res.main.temp
         this.wind = res.wind.speed
@@ -71,7 +79,6 @@ export class HomePageComponent implements OnInit {
         }else if (this.code === "013d" || this.code === "013n") {
           this.snow =true
         }
-        console.log(res);
       },
       error: (err: any) =>
       {
@@ -79,7 +86,6 @@ export class HomePageComponent implements OnInit {
           this.invalid = true
           this.error  = 'No Matched City Found!!'
         }
-        console.log(err.status,"got a error");
       }
     })
   }
