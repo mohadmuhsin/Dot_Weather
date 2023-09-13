@@ -21,13 +21,8 @@
         </div>
         <div *ngIf="!invalid" class="pt-24">
             <div   class="flex justify-center">
-                <img *ngIf="sunny" src="assets/cloud.png" alt="">
-                <img *ngIf="snow" src="assets/snow.png" alt="">
-                <!-- <img *ngIf="haze" src="assets/cloud.png" alt=""> -->
-                <img *ngIf="clear" src="assets/clear.png" alt="">
-                <img *ngIf="rainy" src="assets/rain.png" alt="">
-                <img *ngIf="clouds" src="assets/cloud.png" alt="">
-                <img *ngIf="drizziling" src="assets/drizzle.png" alt="">
+                <img  [src]="img" alt="">
+                
             </div>
 
             <div class="flex justify-center">
