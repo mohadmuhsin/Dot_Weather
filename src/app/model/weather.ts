@@ -8,9 +8,9 @@ export const weatherIcon  = [{
     img:'assets/snow.png',code:['04d','04n'],
     
   },{
-    img:'assets/rain.png',code:['09d','09n','010d','010n',],
+    img:'assets/rain.png',code:['09d','09n','10d','10n',],
     
   },{
-    img:'assets/snow.png',code:['013d','013n'],
+    img:'assets/snow.png',code:['13d','13n'],
     
   }]

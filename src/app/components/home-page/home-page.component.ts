@@ -64,7 +64,7 @@ export class HomePageComponent implements OnInit {
         this.humidity = res.main.humidity
 
         let items: any = this.weatherIcon.find((items: any) => {
-          let findings = items.code.find((code: any) =>{ console.log(code);
+          let findings = items.code.find((code: any) =>{ 
             
             if(code == this.code) return code
           })
