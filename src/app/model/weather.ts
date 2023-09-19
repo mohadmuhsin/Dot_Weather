@@ -13,4 +13,6 @@ export const weatherIcon  = [{
   },{
     img:'assets/snow.png',code:['13d','13n'],
     
+  }, {
+    img:'assets/mist.png',code:['50n']
   }]

@@ -66,7 +66,9 @@ export class HomePageComponent implements OnInit {
         this.location = res.name
         this.temp = res.main.temp
         this.wind = res.wind.speed
-        this.code = res.weather[0].icon
+          this.code = res.weather[0].icon
+          console.log(res,this.code,"itaaaaaaan");
+          
         this.humidity = res.main.humidity
 
         let items: any = this.weatherIcon.find((items: any) => {
