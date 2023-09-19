@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MainServiceService } from 'src/app/service/main-service.service';
 import { Environment } from 'src/app/environments/environment';
 import { weatherIcon } from 'src/app/model/weather';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 //  export enum images{
 //    sunny ='',
 //    snow = ''
@@ -54,7 +55,12 @@ export class HomePageComponent implements OnInit {
 
   search() {
 
-    this.service.getData(this.text).subscribe({
+    this.service.getData(this.text)
+    //   .pipe(
+    //   debounceTime(1000),
+    //   distinctUntilChanged()
+    // )
+      .subscribe({
       next: (res: any) =>
       {
         this.location = res.name
