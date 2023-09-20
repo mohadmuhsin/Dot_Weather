@@ -60,14 +60,11 @@ export class HomePageComponent implements OnInit {
         this.wind = res.wind.speed
         this.code = res.weather[0].icon
         this.humidity = res.main.humidity
+        
+        let items: any = this.weatherIcon.find((item: any) => {
+          return item.code.includes(this.code);
+        });
 
-        let items: any = this.weatherIcon.find((items: any) => {
-          let findings = items.code.find((code: any) =>{ 
-            
-            if(code == this.code) return code
-          })
-          return findings
-        })
         this.img=items.img
       },
       error: (err: any) =>
