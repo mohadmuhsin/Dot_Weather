@@ -4,15 +4,7 @@ import { MainServiceService } from 'src/app/service/main-service.service';
 import { Environment } from 'src/app/environments/environment';
 import { weatherIcon } from 'src/app/model/weather';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-//  export enum images{
-//    sunny ='',
-//    snow = ''
-//   haze:
-//   clear:
-//   rainy:
-//   clouds:
-//   drizziling:
-//   }
+
 
 @Component({
   selector: 'app-home-page',
@@ -66,9 +58,7 @@ export class HomePageComponent implements OnInit {
         this.location = res.name
         this.temp = res.main.temp
         this.wind = res.wind.speed
-          this.code = res.weather[0].icon
-          console.log(res,this.code,"itaaaaaaan");
-          
+        this.code = res.weather[0].icon
         this.humidity = res.main.humidity
 
         let items: any = this.weatherIcon.find((items: any) => {
