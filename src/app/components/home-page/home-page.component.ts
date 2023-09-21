@@ -22,7 +22,7 @@ export class HomePageComponent implements OnInit {
   location:string=''
   humidity!: number
   invalid!: boolean
-  weatherIcon:any[]=weatherIcon
+  weatherIcon:any[]= weatherIcon
   error!: string;
   
   constructor(
@@ -64,7 +64,7 @@ export class HomePageComponent implements OnInit {
         let items: any = this.weatherIcon.find((item: any) => {
           return item.code.includes(this.code);
         });
-
+          
         this.img=items.img
       },
       error: (err: any) =>

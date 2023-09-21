@@ -9,12 +9,12 @@ export class MainServiceService {
   api_key:string =''
   constructor(
     private http: HttpClient,
-  ) { 
-this.api_key = Environment.api_key
+  )
+  { 
+    this.api_key = Environment.api_key
   }
 
   getData(text: string ) {
-    console.log(text,"caaa");
     let texts = text
     if (texts == '') {
       texts='malappuram'
