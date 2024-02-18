@@ -1,57 +1,59 @@
-<div class="bg-cover bg-no-repeat bg-center" style="background-image: url('assets/mesmerizing-view-fresh-green-fields-cloudy-sky.jpg');">
-    <div class="min-h-screen  md:h-2/3 flex justify-center items-center">
-        <div class="p-12 bg-gray-100 bg-opacity-5 shadow-md rounded w-full md:max-w-md  min-h-screen  md:h-2/3">
+<div class="bg-cover bg-no-repeat bg-center" style="
+    background-image: url('assets/mesmerizing-view-fresh-green-fields-cloudy-sky.jpg');
+  ">
+    <div class="min-h-screen md:h-2/3 flex justify-center items-center">
+        <div class="p-12 bg-gray-100 bg-opacity-5 shadow-md rounded w-full md:max-w-md min-h-screen md:h-2/3">
             <h1 class="text-center text-white font-bold text-xl mb-4">Dot Weather</h1>
             <div class="flex items-center">
-                <input
-                [(ngModel)]="text"
-                (input)="debouncedSearch()"
-                type="text"
-                placeholder="Search for a location"
-                class="flex-1 py-2 px-4 rounded-full"
-                />
-            </div>
-            <div *ngIf="invalid" class=" mt-4 p-3  rounded  flex  flex-col items-center justify-between ">
-                <div class="text-2xl text-yellow-400 font-bold p-4">
-                    <p class="">{{this.error}}</p>
 
+                <input [(ngModel)]="text" (input)="debouncedSearch()" type="text" placeholder="Search for a location"
+                    class="flex-1 py-2 px-4 rounded-full" />
+            </div>
+            <div *ngIf="invalid" class="mt-4 p-3 rounded flex flex-col items-center justify-between">
+                <div class="text-2xl text-yellow-400 font-bold p-4">
+                    <p class="">{{ this.error }}</p>
                 </div>
                 <div>
-                    <img src="assets/wepik-export-20230913044304TJac.png" alt="">
+                    <img src="assets/wepik-export-20230913044304TJac.png" alt="" />
                 </div>
             </div>
             <div *ngIf="!invalid" class="pt-24">
-                <div   class="flex justify-center">
-                    <img  [src]="img" alt="">
+                <div class="flex justify-center">
+                    <img [src]="img" alt="" />
                 </div>
 
                 <div class="flex justify-center">
-                    <p class="text-xl md:text-2xl text-white font-bold" >{{temp}}° <span>C</span></p>
+                    <p class="text-xl md:text-2xl text-white font-bold">
+                        {{ temp }}° <span>C</span>
+                    </p>
                 </div>
                 <div class="flex justify-center">
-                    <p class="text-white text-2xl font-bold uppercase">{{location}}</p>
-                </div>  
+                    <p class="text-white text-2xl font-bold uppercase">{{ location }}</p>
+                </div>
 
-                <div class="p-6  text-white flex justify-between ">
-                    <div class="flex justify-center items-center"> 
-                        <img class="p-2 w-12 h-12" src="assets/humidity.png" alt="">
+                <div class="p-6 text-white flex justify-between">
+                    <div class="flex justify-center items-center">
+                        <img class="p-2 w-12 h-12" src="assets/humidity.png" alt="" />
                         <div>
-                            <p class="font-semibold">{{humidity}}%</p>
+                            <p class="font-semibold">{{ humidity }}%</p>
                             <p class="font-medium">Humidity</p>
                         </div>
                     </div>
-                    <div class=" flex justify-center items-center"> 
-                        <img class="p-2 w-12 h-12" src="assets/wind.png" alt="">
+                    <div class="flex justify-center items-center">
+                        <img class="p-2 w-12 h-12" src="assets/wind.png" alt="" />
                         <div>
-                            <p class="font-semibold">{{wind}}<span> km/h</span></p>
+                            <p class="font-semibold">{{ wind }}<span> km/h</span></p>
                             <p class="font-medium">Wind</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center " > 
+            <div class="flex justify-center">
                 <div class="p-2 fixed bottom-0">
-                    <p class="flex justify-center text-xs text-white items-center">© 2023 <span class="font-bold  mx-2"> Dot Weather.</span> All Rights are Reserved.</p>
+                    <p class="flex justify-center text-xs text-white items-center">
+                        © 2023 <span class="font-bold mx-2"> Dot Weather.</span> All Rights
+                        are Reserved.
+                    </p>
                 </div>
             </div>
         </div>

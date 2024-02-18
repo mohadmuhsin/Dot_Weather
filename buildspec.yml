@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands: 
+      - echo "installing dependencies..."
+      - npm install
+      - npmn install -g @angular/cli@16.1.0
+    build:
+      commands:
+        - echo  "Building Angular Projects..."
+        - ng build --prod
+    post_build:
+      commands:
+        - echo "Updating files in the s3 buckets.."
+        - aws s3 sync dist/WEATHER_APP/ s3://jinmeister-weather-app-2024 --delete
